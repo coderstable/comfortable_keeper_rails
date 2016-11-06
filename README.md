@@ -9,8 +9,9 @@ cd 'Arduinoのdocumentroot(各個人で)'
 git clone git@github.com:coderstable/comfortable_keeper_rails.git
 ```
 
-# 作業ブランチ作成
+# 作業ブランチ作成(かならずdevelopブランチをベースにブランチを切る)
 ```
+git checkout develop
 git br 'ブランチ名（作業がわかる名前）'
 ```
 
