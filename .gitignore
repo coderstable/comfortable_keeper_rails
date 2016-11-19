@@ -55,4 +55,3 @@ config/environments/*.local.yml
 # Ignore auto generated files
 /public/system
 
-Gemfile.lock
