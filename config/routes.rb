@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root 'top#index'
+  get    'login'   => 'top#new'
+  post   'login'   => 'top#check'
+  delete 'logout'  => 'top#destroy'
+  get   'device'   => 'top#device'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
