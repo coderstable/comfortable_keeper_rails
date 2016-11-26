@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+  get 'devices/index'
+
+  get 'devices/show'
+
+  get 'devices/new'
+
+  get 'devices/create'
+
+  get 'devices/edit'
+
+  get 'devices/update'
+
+  get 'devices/destroy'
+
+  get 'device_list/index'
+
+  get 'device_list/show'
+
+  get 'device_list/new'
+
+  get 'device_list/create'
+
+  get 'device_list/update'
+
+  get 'device_list/destroy'
+
   root 'top#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

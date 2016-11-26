@@ -36,6 +36,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 
+### デバッグ系
+gem 'pry-rails'
+gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+gem 'pry-stack_explorer' # スタックをたどれる
+
+gem 'pry-coolline' # pryの入出力に色付け
+gem 'awesome_print'
+
+gem 'hirb'
+gem 'hirb-unicode'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 
 group :development, :test do
