@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
   length: {maximum: 100},
   format: { with: VALID_EMAIL_REGEX },
+  # 大文字小文字を無視して、レコードで一意になるようにチェック
   uniquness: { case_sensitive: false }
 
   validates :password, length: { minimum: 6, maximum: 100 }
