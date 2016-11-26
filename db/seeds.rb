@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Device.create(id: 1, device_name: "エアコン", preset_temperatuire: "26", device_communication: 0, mac_address: "null")
+Device.create(id: 2, device_name: "照明", preset_temperatuire: "  null", device_communication: 0, mac_address: "null")
