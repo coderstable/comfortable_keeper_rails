@@ -1,2 +1,18 @@
 <h1>Devices#edit</h1>
-<p>Find me in app/views/devices/edit.html.erb</p>
+
+<%= form_for(@device) do |f| %>
+  <%= f.label :device_name %>
+  <%= f.text_field :device_name %>
+
+  <%= f.label :mac_address %>
+  <%= f.text_field :mac_address %>
+
+  <%= f.label :preset_temperatuire %>
+  <%= f.text_field :preset_temperatuire %>
+
+  <%= f.label :device_communication %>
+  <%= f.text_field :device_communication %>
+  <%= f.hidden_field :id, :value => @device.id %>
+
+  <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>
+<% end %>

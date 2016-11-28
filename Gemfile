@@ -36,29 +36,34 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 
-### デバッグ系
-gem 'pry-rails'
-gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
-gem 'pry-stack_explorer' # スタックをたどれる
-
-gem 'pry-coolline' # pryの入出力に色付け
-gem 'awesome_print'
-
-gem 'hirb'
-gem 'hirb-unicode'
-gem 'better_errors'
-gem 'binding_of_caller'
-
+group :development do
+  gem 'web-console', '~> 2.0'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれる
+  # pryの入出力に色付け
+  gem 'pry-coolline'
+  gem 'awesome_print'
+  ###
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'seed-fu'
+
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'spring'
+
 end
 
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+group :test do
+  gem 'faker'
+  gem 'database_cleaner'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end

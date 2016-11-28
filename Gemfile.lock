@@ -58,9 +58,18 @@ GEM
     concurrent-ruby (1.0.2)
     coolline (0.5.0)
       unicode_utils (~> 1.4)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faker (1.6.6)
+      i18n (~> 0.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
@@ -141,6 +150,23 @@ GEM
     rake (11.3.0)
     rdoc (4.3.0)
     ref (2.0.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -151,6 +177,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed-fu (2.3.6)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
     slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
@@ -194,6 +223,9 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.1.0)
+  database_cleaner
+  factory_girl_rails
+  faker
   hirb
   hirb-unicode
   jbuilder (~> 2.0)
@@ -203,8 +235,10 @@ DEPENDENCIES
   pry-rails
   pry-stack_explorer
   rails (= 4.2.5)
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed-fu
   spring
   sqlite3
   therubyracer

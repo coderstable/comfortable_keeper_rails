@@ -1,2 +1,17 @@
 <h1>Devices#new</h1>
-<p>Find me in app/views/devices/new.html.erb</p>
+
+<%= form_for(@device) do |f| %>
+  <%= f.label :device_name %>
+  <%= f.text_field :device_name %>
+
+  <%= f.label :mac_address %>
+  <%= f.text_field :mac_address %>
+
+  <%= f.label :preset_temperatuire, '設定温度' %>
+  <%= f.text_field :preset_temperatuire %>
+
+  <%= f.label :device_communication, 'デバイスのスイッチ のオン/オフ' %>
+  <%= f.text_field :device_communication %>
+
+  <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>
+<% end %>

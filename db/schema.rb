@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121050156) do
+ActiveRecord::Schema.define(version: 20161128030303) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "mac_address"
     t.string   "preset_temperatuire"
     t.string   "device_name"
-    t.integer  "device_communication"
+    t.string   "device_communication"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

@@ -4,5 +4,8 @@
   <% @device.each do |n| %>
     <ul>
       <li><%= n.device_name %></li>
+      <%= link_to '編集', edit_device_path(n.id) %> <br>
+      <%= link_to '削除', device_path(n.id), method: :delete, data: { confirm: "まじで？" } %>
     </ul>
   <% end %>
+  <%= link_to 'デバイスの新規追加', new_device_path %>
