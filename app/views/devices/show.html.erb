@@ -1,2 +1,19 @@
 <h1>Devices#show</h1>
-<p>Find me in app/views/devices/show.html.erb</p>
+
+<strong>device_name:</strong>
+  <ul>
+    <li>
+        <%= @device.device_name %>
+    </li>
+    <li>
+        <%= @device.preset_temperatuire %>
+    </li>
+    <li>
+        <%= @device.device_communication %>
+    </li>
+    <li>
+        <%= @device.mac_address %>
+    </li>
+  </ul>
+
+  <%= link_to 'デバイス一覧へ戻る', devices_path %>

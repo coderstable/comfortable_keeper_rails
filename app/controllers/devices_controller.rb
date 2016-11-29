@@ -23,12 +23,12 @@ class DevicesController < ApplicationController
   end
 
   def edit
-    @basic_recipe =  Device.find(params[:id])
+    @device =  Device.find(params[:id])
   end
 
   def update
-    @basic_recipe =  Device.find(params[:id])
-    if @basic_recipe.update_attributes(basic_recipe_params)
+    @device =  Device.find(params[:id])
+    if @device.update_attributes(device_params)
       flash[:success] = "デバイス名を更新しました"
       redirect_to device_path
     end
