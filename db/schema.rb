@@ -11,8 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161128030303) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "mac_address"
