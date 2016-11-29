@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161128030303) do
 
   create_table "devices", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20161128030303) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 100, null: false
