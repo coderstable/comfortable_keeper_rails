@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119083508) do
-  
+ActiveRecord::Schema.define(version: 20161130103407) do
+
   create_table "devices", force: :cascade do |t|
     t.string   "mac_address"
-    t.string   "preset_temperatuire"
+    t.integer  "preset_temperature"
     t.string   "device_name"
     t.string   "device_communication"
     t.datetime "created_at",           null: false
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20161119083508) do
   end
 
   create_table "living_environment_logs", force: :cascade do |t|
-    t.string   "temperrature"
+    t.string   "temperature"
     t.string   "humidity"
     t.string   "time"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "operate_logs", force: :cascade do |t|
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20161119083508) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
-
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 100, null: false

@@ -7,10 +7,10 @@
   <%= f.label :mac_address %>
   <%= f.text_field :mac_address %>
 
-  <%= f.label :preset_temperatuire, '設定温度' %>
-  <%= f.text_field :preset_temperatuire %>
+  <%= f.label :preset_temperature, '設定温度（数字で入力すること）' %>
+  <%= f.text_field :preset_temperature %>
 
-  <%= f.label :device_communication, 'デバイスのスイッチ のオン/オフ' %>
+  <%= f.label :device_communication, 'デバイスとの接続スイッチ のオン/オフ' %>
   <%= f.text_field :device_communication %>
 
   <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>

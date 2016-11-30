@@ -42,6 +42,6 @@ class DevicesController < ApplicationController
 
   private
     def device_params
-      params.require(:device).permit(:id, :device_name, :preset_temperatuire, :device_communication, :mac_address)
+      params.require(:device).permit(:id, :device_name, :preset_temperature, :device_communication, :mac_address)
     end
 end
