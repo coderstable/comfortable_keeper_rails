@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
@@ -12,4 +12,17 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  require 'nkf'
+  require 'bcrypt'
+
+  class << self
+    def authenticate(email, password)
+      user = find_by_email(email)
+      if user.authenticate(password)
+        user
+      else
+        nil
+      end
+    end
+  end
 end

@@ -1,3 +1,3 @@
-class OperateLog < ActiveRecord::Base
+class OperateLog < ApplicationRecord
   belongs_to :device
 end
