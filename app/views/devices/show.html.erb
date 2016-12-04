@@ -1,24 +1,42 @@
 <h1>Devices#show</h1>
 
-<strong>device_name:</strong>
-  <ul>
-        <strong>デバイス名</strong><br>
-    <li>
+<div class="container">
+  <table class="table">
+  <thead>
+    <tr>
+      <th>デバイス情報</th>
+      <th>設定値</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
         <%= @device.device_name %>
-    </li>
-        <strong>設定温度</strong><br>
-    <li>
+      </td>
+      <td>
         <%= @device.preset_temperature %>
-    </li>
-        <strong>デバイスとの接続のオン/オフ</strong><br>
-    <li>
-        <%= @device.device_communication %>
-    </li>
-
-      <strong>macアドレス</strong><br>
-    <li>
-        <%= @device.mac_address %>
-    </li>
-  </ul>
-
+      </td>
+    </tr>
+  </tbody>
+  </table>
   <%= link_to 'デバイス一覧へ戻る', devices_path %>
+</div>
+
+
+
+
+    <!-- <ul>
+      <li>
+      </li>
+      <li>
+          <%= @device.preset_temperature %>
+      </li>
+      <li>
+          <strong>デバイスとの接続のオン/オフ：　</strong>
+          <%= @device.device_communication %>
+      </li>
+      <li>
+        <strong>macアドレス：　</strong>
+        <%= @device.mac_address %>
+      </li>
+    </ul> -->

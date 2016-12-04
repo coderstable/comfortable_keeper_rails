@@ -13,12 +13,12 @@ class DevicesController < ApplicationController
 
   def create
     @device = Device.new(device_params)
-    if @device.save then
+    if @device.save
       flash[:success] = "新しいデバイスが登録されました"
-
       redirect_to devices_path
     else
-      render 'new'
+      flash.now[:error] = "新しいデバイスを登録できません"
+      render new_device_path
     end
   end
 
@@ -28,15 +28,18 @@ class DevicesController < ApplicationController
 
   def update
     @device =  Device.find(params[:id])
-    if @device.update_attributes(device_params)
-      flash[:success] = "デバイス名を更新しました"
-      redirect_to device_path
-    end
+      if @device.update_attributes(device_params)
+        flash[:success] = "デバイス情報を更新しました"
+        redirect_to device_path
+      else
+        flash.now[:error] = 'デバイス情報を更新できませんでした'
+        render 'edit'
+      end
   end
 
   def destroy
     Device.find(params[:id]).destroy
-    flash[:success] = "recipe is destroyed."
+    flash[:success] = "デバイスリストから１件削除しました"
     redirect_to devices_path
   end
 

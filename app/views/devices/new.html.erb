@@ -1,17 +1,25 @@
 <h1>Devices#new</h1>
 
-<%= form_for(@device) do |f| %>
-  <%= f.label :device_name %>
-  <%= f.text_field :device_name %>
+<div class="container">
+  <%= form_for(@device) do |f| %>
+    <div class="form-group">
+      <%= f.label :device_name %>
+      <%= f.text_field :device_name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :mac_address %>
+      <%= f.text_field :mac_address %>
+    </div>
+    <div class="form-group">
+      <%= f.label :preset_temperature, '設定温度（20〜30の数字で入力すること）' %>
+      <%= f.number_field :preset_temperature %>
+    </div>
+    <div class="form-group">
+      <%= f.label :device_communication, 'デバイスとの接続スイッチ のオン/オフ' %>
+      <%= f.text_field :device_communication %>
+    </div>
 
-  <%= f.label :mac_address %>
-  <%= f.text_field :mac_address %>
+    <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>
 
-  <%= f.label :preset_temperature, '設定温度（数字で入力すること）' %>
-  <%= f.text_field :preset_temperature %>
-
-  <%= f.label :device_communication, 'デバイスとの接続スイッチ のオン/オフ' %>
-  <%= f.text_field :device_communication %>
-
-  <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>
-<% end %>
+  <% end %>
+</div>
