@@ -3,14 +3,14 @@ class TopController < ApplicationController
   end
 
   def check
-    user = User.find_by(email: params[:session][:email])
-    if
-      user && user.authenticate(params[:session][:password])
-      log_in user
-      redirect_to device_path
-    else
-      flash.now[:danger] = '誤りがあります。'
-    end
+    user = User.find_by(email: params[:session][:email].downcase)
+     if user && user.authenticate(params[:session][:password])
+       log_in user
+       redirect_to root
+     else
+       flash.now[:danger] = 'E-mailかパスワードが間違っています'
+       render 'check'
+     end
   end
 
   def device
