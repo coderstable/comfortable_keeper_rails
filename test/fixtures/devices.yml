@@ -1,13 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  mac_address: MyString
-  preset_temperatuire: MyString
-  device_name: MyString
-  device_communication: 1
-
-two:
-  mac_address: MyString
-  preset_temperatuire: MyString
-  device_name: MyString
-  device_communication: 1
