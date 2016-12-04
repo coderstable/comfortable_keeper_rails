@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   require 'bcrypt'
 
   class << self
-    def authenticate(email, hashed_password)
+    def authenticate(email, password)
       user = find_by_email(email)
-      if user.try(:hashed_password) && BCrypt::Password.new(user.hashed_password) == user
+      if user.authenticate(password)
         user
       else
         nil
