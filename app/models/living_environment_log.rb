@@ -1,3 +1,3 @@
-class LivingEnvironmentLog < ActiveRecord::Base
+class LivingEnvironmentLog < ApplicationRecord
   belongs_to :deveice
 end
