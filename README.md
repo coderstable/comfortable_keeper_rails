@@ -1,5 +1,6 @@
 # comfortable_keeper_rails
 快適なエアコン温度を保つためのプロジェクト(Rails版)
+[仕様はこちら](https://github.com/coderstable/comfortable_keeper_spec)
 
 # 概要
 
