@@ -4,8 +4,8 @@
     入力した値が不正です<%= "#{@device.errors.count}件のエラー" %>
   </di>
   <ul>
-    <% @device.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+    <% @device.errors.messages.each do |msg| %>
+      <li><%= msg[1][1] %></li>
     <% end %>
   </ul>
 </div>
