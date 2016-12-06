@@ -9,15 +9,28 @@ cd 'Arduinoのdocumentroot(各個人で)'
 git clone git@github.com:coderstable/comfortable_keeper_rails.git
 ```
 
-# 作業ブランチ作成(かならずdevelopブランチをベースにブランチを切る)
+# 作業ブランチ作成(gitflowを導入していない場合)
 ```
 git checkout develop
 git br 'ブランチ名（作業がわかる名前）'
 ```
 
-# 作業ブランチチェックアウト
+# 作業ブランチ作成(gitflowを導入している場合)
+```
+git flow feature start  'ブランチ名（作業がわかる名前）'
+```
+# 作業ブランチチェックアウト(gitflowを導入していない場合必要)
 ```
 git checkout 'ブランチ名（作業がわかる名前）'
+```
+# ブランチ確認（ブランチが開発対象ブランチになっているかどうか確認）
+```
+git status
+```
+
+# 新規ファイル追加(. はすべてのファイルを追加する)
+```
+git add .
 ```
 # コミット
 ```
@@ -32,3 +45,4 @@ git push origin 'ブランチ名（作業がわかる名前）'
 
 # プルリク
 githubからプルリク
+
