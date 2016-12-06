@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   post   'login'   => 'top#check'
   delete 'logout'  => 'top#destroy'
   get   'device'   => 'top#device'
+
+  resources :devices
 end

@@ -12,6 +12,30 @@
 
 ActiveRecord::Schema.define(version: 20161204045341) do
 
+  create_table "devices", force: :cascade do |t|
+    t.string   "mac_address"
+    t.integer  "preset_temperature"
+    t.string   "device_name",          null: false
+    t.string   "device_communication"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "living_environment_logs", force: :cascade do |t|
+    t.string   "temperature"
+    t.string   "humidity"
+    t.string   "time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "operate_logs", force: :cascade do |t|
+    t.string   "temperature_up"
+    t.string   "temperature_down"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 100, null: false
     t.string   "password_digest", limit: 100

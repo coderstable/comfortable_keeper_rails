@@ -1,0 +1,23 @@
+<h1>Devices#show</h1>
+
+<div class="container">
+  <table class="table">
+  <thead>
+    <tr>
+      <th>デバイス情報</th>
+      <th>設定値</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= @device.device_name %>
+      </td>
+      <td>
+        <%= @device.preset_temperature %>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  <%= link_to 'デバイス一覧へ戻る', devices_path %>
+</div>
