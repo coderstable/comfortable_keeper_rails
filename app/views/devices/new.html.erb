@@ -14,11 +14,12 @@
     </div>
     <div class="form-group">
       <%= f.label :preset_temperature, '設定温度（20〜30の数字で入力すること）' %>
-      <%= f.number_field :preset_temperature, class: 'form-control' %>度
+      <%= f.number_field :preset_temperature, class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :device_communication, 'デバイスとの接続スイッチ のオン/オフ' %>
-      <%= f.text_field :device_communication, class: 'form-control' %>
+      デバイス接続オン
+      <%= f.check_box :device_communication %>
     </div>
 
     <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>
