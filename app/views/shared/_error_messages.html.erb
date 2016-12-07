@@ -1,0 +1,12 @@
+<% if @device.errors.any? %>
+<div id="error_explanation">
+  <di class="alert alert-danger">
+    入力した値が不正です<%= "#{@device.errors.count}件のエラー" %>
+  </di>
+  <ul>
+    <% @device.errors.messages.each do |msg| %>
+      <li><%= msg[1][1] %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
