@@ -2,6 +2,8 @@
 
 <div class="container">
   <%= form_for(@device) do |f| %>
+    <%= render 'shared/error_messages' %>
+
     <div class="form-group">
       <%= f.label :device_name %>
       <%= f.text_field :device_name %>
@@ -15,8 +17,10 @@
       <%= f.number_field :preset_temperature %>
     </div>
     <div class="form-group">
-      <%= f.label :device_communication, 'デバイスとの接続スイッチ のオン/オフ' %>
-      <%= f.text_field :device_communication %>
+      <div class="control-label form-inline">
+        <%= f.check_box :device_communication, {class: :checkbox}, true, false %>
+        <%= f.label :device_communication, 'デバイスとの接続スイッチをオン' %>
+      </div>
     </div>
 
     <%= f.submit "edit device", class: "btn btn-large btn-primary" %>
