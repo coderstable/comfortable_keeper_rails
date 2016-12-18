@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get    'signup'     => 'top#signup'
   post   'login'   => 'top#check'
   delete 'logout'  => 'top#destroy'
-  get   'device'   => 'top#device'
+  # get   'device'   => 'top#device'
 
   resources :devices
 end

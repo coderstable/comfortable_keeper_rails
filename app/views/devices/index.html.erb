@@ -1,13 +1,33 @@
 <h1>Devices#index</h1>
 <div class="container">
 <p>デバイス一覧：</p>
-  <% @device.each do |n| %>
-    <ul>
-      <li><%= n.device_name %></li>
-      <%= link_to '詳細', device_path(n.id) %> <br>
-      <%= link_to '編集', edit_device_path(n.id) %> <br>
-      <%= link_to '削除', device_path(n.id), method: :delete, data: { confirm: "まじで？" } %>
-    </ul>
-  <% end %>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>デバイス名</th>
+            <th>設定温度</th>
+            <th>デバイスとの接続</th>
+            <th>編集</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @device.each do |n| %>
+          <tr>
+            <td><%= n.device_name %></td>
+            <td><%= n.preset_temperature %></td>
+              <% if n.device_communication %>
+                <td><%= "オン" %></td>
+              <% else %>
+                <td><%= "オフ" %></td>
+              <% end %>
+            <td><%= link_to '詳細', device_path(n.id) %>
+            <%= link_to '編集', edit_device_path(n.id) %>
+            <%= link_to '削除', device_path(n.id), method: :delete, data: { confirm: "まじで？" } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+    </table>
+    </div>
   <%= link_to 'デバイスの新規追加', new_device_path %>
 </div>

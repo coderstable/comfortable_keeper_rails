@@ -14,11 +14,11 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(device_params)
     if @device.save
-      flash[:success] = "新しいデバイスが登録されました"
       redirect_to devices_path
+      flash[:success] = "新しいデバイスが登録されました"
     else
-      flash.now[:error] = "新しいデバイスを登録できません"
-      render new_device_path
+      # flash.now[:error] = "新しいデバイスを登録できません"
+      render 'new'
     end
   end
 
