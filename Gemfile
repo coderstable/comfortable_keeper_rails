@@ -35,7 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
-gem 'draper', '~> 1.3'
+# gem 'draper'#, '~> 1.3'
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
+gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 
 
 group :development, :test do
