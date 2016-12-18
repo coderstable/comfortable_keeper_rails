@@ -2,24 +2,27 @@
 
 <div class="container">
   <%= form_for(@device) do |f| %>
+    <%= render 'shared/error_messages' %>
+
     <div class="form-group">
-      <%= f.label :device_name %>
-      <%= f.text_field :device_name %>
+      <%= f.label "デバイス名" %>
+      <%= f.text_field :device_name, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :mac_address %>
-      <%= f.text_field :mac_address %>
+      <%= f.label "macアドレス" %>
+      <%= f.text_field :mac_address, class: 'form-control', pattern: "\d{1,2}\:\d{1,2}\:\d{1,2}\:\d{1,2}\:\d{1,2}\:\d{1,2}\:", placeholder: "xx:xx:xx:xx:xx:xx" %>
     </div>
     <div class="form-group">
-      <%= f.label :preset_temperature, '設定温度（20〜30の数字で入力すること）' %>
-      <%= f.number_field :preset_temperature %>
+      <%= f.label :preset_temperature, '設定温度' %>
+      <%= f.number_field :preset_temperature, class: 'form-control', min: 20, max: 30, placeholder: "20〜30の数字で入力すること" %>
     </div>
     <div class="form-group">
-      <%= f.label :device_communication, 'デバイスとの接続スイッチ のオン/オフ' %>
-      <%= f.text_field :device_communication %>
+      <div class="control-label form-inline">
+        <%= f.check_box :device_communication, {}, "true", "false" %>
+        <%= f.label :device_communication, 'デバイスと接続する' %>
+      </div>
     </div>
 
-    <%= f.submit "Create new device", class: "btn btn-large btn-primary" %>
-
+    <%= f.submit "Create new device", class: "btn btn-large btn-primary", name: nil %>
   <% end %>
 </div>

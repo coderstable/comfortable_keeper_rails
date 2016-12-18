@@ -4,8 +4,9 @@
   <table class="table">
   <thead>
     <tr>
-      <th>デバイス情報</th>
+      <th>デバイス名</th>
       <th>設定値</th>
+      <th>デバイスとの接続オン/オフ</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,16 @@
       </td>
       <td>
         <%= @device.preset_temperature %>
+      </td>
+      <td>
+        <% if @device.device_communication %>
+          <%= "オン" %>
+        <% else %>
+          <%= "オフ" %>
+        <% end %>
+      </td>
+      <td>
+        <%= @device.mac_address %>
       </td>
     </tr>
   </tbody>
