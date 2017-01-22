@@ -15,6 +15,7 @@
           <% @device.each do |n| %>
           <tr>
             <td><%= n.device_name %></td>
+            <td><%= n.preset_temperature %></td>
             <td><%= n.decorate.device_switch %></td>
 
             <td><%= link_to '詳細', device_path(n.id) %>

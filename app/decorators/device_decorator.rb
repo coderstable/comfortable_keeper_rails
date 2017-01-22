@@ -13,7 +13,7 @@ class DeviceDecorator < Draper::Decorator
      if device.device_communication
        "オン"
      else
-       "オフ" 
+       "オフ"
      end
   end
 end
