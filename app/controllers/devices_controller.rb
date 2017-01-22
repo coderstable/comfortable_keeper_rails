@@ -4,7 +4,7 @@ class DevicesController < ApplicationController
   end
 
   def show
-    @device = Device.find(params[:id])
+    @device = DeviceDecorator.find(params[:id])
   end
 
   def new
@@ -23,11 +23,11 @@ class DevicesController < ApplicationController
   end
 
   def edit
-    @device =  Device.find(params[:id])
+    @device =  DeviceDecorator.find(params[:id])
   end
 
   def update
-    @device =  Device.find(params[:id])
+    @device =  DeviceDecorator.find(params[:id])
       if @device.update_attributes(device_params)
         flash[:success] = "デバイス情報を更新しました"
         redirect_to device_path
@@ -38,7 +38,7 @@ class DevicesController < ApplicationController
   end
 
   def destroy
-    Device.find(params[:id]).destroy
+    DeviceDecorator.find(params[:id]).destroy
     flash[:success] = "デバイスリストから１件削除しました"
     redirect_to devices_path
   end
