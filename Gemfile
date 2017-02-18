@@ -39,6 +39,7 @@ gem 'bootstrap_form'
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 
+gem 'i18n_generators'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

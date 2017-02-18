@@ -5,29 +5,29 @@
   <thead>
     <tr>
       <th>デバイス名</th>
+      <th>macアドレス</th>
       <th>設定値</th>
-      <th>デバイスとの接続オン/オフ</th>
+      <th>デバイスとの接続</th>
     </tr>
   </thead>
   <tbody>
+    <%= bootstrap_form_for(@device) do |f| %>
+      <%= render 'shared/error_messages' %>
     <tr>
       <td>
-        <%= @device.device_name %>
+        <%= f.static_control :device_name, hide_label: true, class: 'form-control' %>
       </td>
       <td>
-        <%= @device.preset_temperature %>
+        <%= f.static_control :mac_address, hide_label: true, class: 'form-control', pattern: "\d{1,2}\:\d{1,2}\:\d{1,2}\:\d{1,2}\:\d{1,2}\:\d{1,2}\:", placeholder: "xx:xx:xx:xx:xx:xx" %>
       </td>
       <td>
-        <% if @device.device_communication %>
-          <%= "オン" %>
-        <% else %>
-          <%= "オフ" %>
-        <% end %>
+        <%= f.static_control :preset_temperature, hide_label: true, class: 'form-control', min: 20, max: 30, placeholder: "20〜30の数字で入力すること" %>
       </td>
       <td>
-        <%= @device.mac_address %>
+        <%= f.static_control :device_communication, hide_label: true, class: 'form-control' %>
       </td>
     </tr>
+    <% end %>
   </tbody>
   </table>
   <%= link_to 'デバイス一覧へ戻る', devices_path %>
